@@ -1,0 +1,6 @@
+age     age_group     height     Status     years_married
+21      Adult         6.0        Single      -1
+2       Child          3         Married      0
+18      Adult         5.7        Married      20
+221     Elderly        5         Widowed      2
+34      Child         -7         Married      3

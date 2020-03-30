@@ -1,0 +1,13 @@
+library(arules)
+getwd()
+data = read.csv(file.choose(), header = FALSE, sep=",")
+str(data)
+write.csv(data,file = "market_ap.csv",quote = FALSE, row.names = FALSE)
+data2<- read.csv(file.choose(), header = FALSE)
+mat <- read.transactions("market_ap.csv", sep = ",", rm.duplicates = TRUE)
+summary(mat)
+itemFrequencyPlot(mat, topN=10)
+#training dataset for apriori
+rules<- apriori(data=mat, parameter = list(support=0.07, confidence=0.15))
+summary(rules)
+inspect(sort(rules, by='lift')[1:10])
